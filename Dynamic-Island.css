@@ -8,7 +8,7 @@ body{
   border: 0;
   /* z-index: -1; */
   border-radius: 100px;
-  width: 18rem;
+  width: 32rem;
   height: 5rem;
   /* width: 55rem;
   height: 25rem; */
@@ -30,13 +30,13 @@ body{
 
 @keyframes big {
   0% {
-    width: 32rem;
-    /* height: 1rem; */
+    width: 1rem;
+    height: 5rem;
     /* margin-top: 0; */
   }
 
   10% {
-    width: 32rem;
+    width: 1rem;
     height: 5rem;
     margin-top: 0;
   }
@@ -65,7 +65,7 @@ body{
 }
 
 .round {
-  animation: round 6s;
+  animation: round 4s;
 }
 
 @keyframes round {
@@ -77,61 +77,61 @@ body{
     transform: rotate(360deg);
   }
 
-  55% {
+  60% {
     transform: rotate(360deg);
   }
 
   100% {
-    transform: rotate(0deg);
+    transform: rotate(-90deg);
   }
 }
 
 .biger {
-  animation: biger 3s;
+  animation: biger 5s;
 }
 .op{
   animation: op 3s;
 }
 @keyframes biger {
+  
   0% {
-    width: 18rem;
-    height: 4.6rem;
+    width: 1rem;
+    height: 5rem;
+    /* margin-top: 0; */
+  }
+/* 
+  1% {
+    width: 1rem;
+    height: 5rem;
+    margin-top: 0;
+  } */
 
+  10% {
+    width: 1rem;
+    height: 5rem;
     margin-top: 0;
   }
-
-  25% {
-    width: 50rem;
+  20% {
+    width: 32rem;
     height: 25rem;
+    margin-top: 0;
   }
 
   80% {
-    width: 50rem;
+    width: 32rem;
     height: 25rem;
-  }
-
-  100% {
-    width: 18rem;
-    height: 4.6rem;
     margin-top: 0;
   }
-}
 
-@keyframes op {
-  0% {
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  75% {
-    opacity: 1;
+  90% {
+    width: 1rem;
+    height: 5rem;
+    margin-top: 0;
   }
 
   100% {
-    opacity: 0;
+    width: 1rem;
+    height: 1rem;
   }
 }
 
@@ -167,4 +167,14 @@ button:hover {
   background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
   background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
   text-decoration: none;
+}
+.disable{
+  background-image: url();
+  background-color: gray;
+  cursor:not-allowed;
+}
+.disable:hover{
+  background-image: url();
+  background-color: gray;
+  cursor: not-allowed;
 }

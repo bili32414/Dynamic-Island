@@ -7,102 +7,138 @@
   <title>Dynamic Island</title>
   <link rel="stylesheet" href="./Dynamic-Island.css">
   <script>
-    var check=0;
-    var nlzj=`<div style="width:5rem;height:100%;display: flex;justify-content: center;align-items: center;"><p style="width:5rem;text-align:center;color:white;font-size:40px;margin:0;overflow: hidden; ">南锣子酱</p></div>`;
-    function biger() {
+    var check = 0;
+
+    function big() {
+      
+      check = 1;
+      document.getElementById('btn1').disabled = false;
+      document.getElementById('btn1').classList.add("disable");
+      document.getElementById('btn2').disabled = false;
+      document.getElementById('btn2').classList.add("disable");
       var dynamicIsland = document.getElementById("Dynamic-Island");
-      document.getElementById('btn1').disabled = true;
-      // document.getElementById('btn2').disabled = true;
-      if(check==0){
-        setTimeout(function(){
-          dynamicIsland.innerHTML = `
-            <div style="width: 50rem;height: 20rem;border-radius: 100px;padding: 1rem;padding-top: 5rem;" id="biger-box">
-              <div style="width: 48rem;height:10rem;display: flex;justify-content: space-between;align-items: center;">
-                <img src="./about.svg" alt="" width="20%rem">
-                <p style="color: white;font-size: 3rem;">@南锣子酱</p>
-              </div>
-              <div style="width: 45rem;height:8.5rem;display: flex;justify-content: end;align-items: center;">
-                <p style="color: white;font-size: 5rem;">版权所有</p>
-              </div>
-            </div>
-          `;
-        },250);
-        check=0;
-      }else{
-        setTimeout(function(){
-          dynamicIsland.innerHTML = `
-          <div style="width: 50rem;height: 20rem;border-radius: 100px;padding: 1rem;padding-top: 5rem;" id="biger-box">
-              <div style="width: 48rem;height:10rem;display: flex;justify-content: space-between;align-items: center;">
-                <img src="./about.svg" alt="" width="20%rem">
-                <p style="color: white;font-size: 3rem;">@南锣子酱</p>
-              </div>
-              <div style="width: 45rem;height:8.5rem;display: flex;justify-content: end;align-items: center;">
-                <p style="color: white;font-size: 5rem;">版权所有</p>
-              </div>
-            </div>
-          `;
-        },100);
-        check=0;
-      }
-      // op.classList.add("op");
-      dynamicIsland.classList.add('biger');
-      setTimeout(function(){
-        dynamicIsland.innerHTML = "";
-      },2500);
+      dynamicIsland.innerHTML = ``;
+      dynamicIsland.classList.add('big');
       setTimeout(function () {
-        // op.classList.remove("op");
+        dynamicIsland.innerHTML = `
+        <div style="width: 100%;height:100%;display: flex;justify-content: space-between;align-items: center;">
+          <img src="./Bilibili.svg" alt="" width="12.5%rem" style="margin-left: 1rem;">
+          <div style="width:10rem;height:100%;display: flex;justify-content: center;align-items: center;"><p style="width:10rem;text-align:center;color:white;font-size:1.5rem;margin:0;overflow: hidden; ">南锣子酱</p></div>
+          <img src="./loading.svg" alt="" width="12.5%rem" style="margin-right: 1rem;rotate: 270deg;" id="loading">
+          </div>
+          `;
+          document.getElementById("loading").classList.add('round');
+      }, 700);
+
+      setTimeout(function () {
+        setTimeout(function () {
+          document.getElementById("loading").classList.remove('round');
+          dynamicIsland.innerHTML = "";
+        }, 3100);
+        setTimeout(function () {
+          dynamicIsland.classList.remove('big');
+
+          document.getElementById('btn1').disabled = false;
+          document.getElementById('btn1').classList.remove("disable");
+          document.getElementById('btn2').disabled = false;
+          document.getElementById('btn2').classList.remove("disable");
+        }, 5000);
+      }, 800);
+
+    }
+
+    function biger() {
+      
+      var dynamicIsland = document.getElementById("Dynamic-Island");
+      document.getElementById('btn1').disabled = false;
+      document.getElementById('btn1').classList.add("disable");
+      document.getElementById('btn2').disabled = false;
+      document.getElementById('btn2').classList.add("disable");
+      dynamicIsland.innerHTML = ``;
+        setTimeout(function () {
+          dynamicIsland.innerHTML = `
+            <div style="width: 100%;height:100%;border-radius: 100px;padding: 1rem;padding-top: 5rem;" id="biger-box">
+              <div style="width: 90%;height:10rem;display: flex;justify-content: space-evenly;align-items: center;">
+                <img src="./about.svg" alt="" width="20%rem" id="about">
+                <p style="color: white;font-size: 3rem;">@南锣子酱</p>
+              </div>
+              <div style="width: 80%;height:8.5rem;display: flex;justify-content: end;align-items: center;">
+                <p style="color: white;font-size: 4rem;text-align:center">版权所有</p>
+              </div>
+            </div>
+          `;
+        }, 850);
+        check = 0;
+      document.getElementById('btn1').disabled = true;
+      document.getElementById('btn1').classList.add("disable");
+      document.getElementById('btn2').disabled = true;
+      document.getElementById('btn2').classList.add("disable");
+      dynamicIsland.classList.add('biger');
+      setTimeout(function () {
+        dynamicIsland.innerHTML = "";
+      }, 4000);
+      setTimeout(function () {
         dynamicIsland.classList.remove('biger');
         dynamicIsland.addEventListener("click", big);
         document.getElementById('btn1').disabled = false;
-        // document.getElementById('btn2').disabled = false;
-      }, 3000);
-    }
-
-    function big() {
-      check=1;
-      document.getElementById('btn1').disabled = true;
-      // document.getElementById('btn2').disabled = true;
-      var dynamicIsland = document.getElementById("Dynamic-Island");
-      
-      dynamicIsland.innerHTML = `
-      <div style="width: 100%;height:100%;display: flex;justify-content: space-between;align-items: center;">
-        <img src="./Bilibili.svg" alt="" width="12.5%rem" style="margin-left: 1rem;">
-        <div style="width:10rem;height:100%;display: flex;justify-content: center;align-items: center;"><p style="width:10rem;text-align:center;color:white;font-size:1.5rem;margin:0;overflow: hidden; ">南锣子酱</p></div>
-        <img src="./loading.svg" alt="" width="12.5%rem" style="margin-right: 1rem;rotate: 270deg;" id="loading">
-      </div>
-      `;
-      // dynamicIsland.removeEventListener("click", big);
-      dynamicIsland.classList.add('big');
-      document.getElementById("loading").classList.add('round');
-      setTimeout(function() {
-        document.getElementById("loading").classList.remove('round');
-        dynamicIsland.innerHTML = "";
-      }, 4200);
-      setTimeout(function () {
-        dynamicIsland.classList.remove('big');
-        
-        document.getElementById('btn1').disabled = false;
-        // document.getElementById('btn2').disabled = false;
+        document.getElementById('btn1').classList.remove("disable");
+        document.getElementById('btn2').disabled = false;
+        document.getElementById('btn2').classList.remove("disable");
       }, 5000);
     }
 
+    function back() {
+      
+      var dynamicIsland = document.getElementById("Dynamic-Island");
+      document.getElementById('btn2').disabled = false;
+      document.getElementById('btn2').classList.add("disable");
+      dynamicIsland.innerHTML = ``;
+      setTimeout(function () {
+        dynamicIsland.innerHTML = `
+        <div style="width: 32rem;height: 20rem;border-radius: 100px;padding: 1rem;padding-top: 5rem;" id="biger-box">
+          <div style="width: 30rem;height:10rem;display: flex;justify-content: center;align-items: center;">
+            <p style="text-align:center;color:white;font-size:3rem;margin:0;">确定返回吗？</p><br>
+          </div>
+          <p style="margin:0;padding:0;color:white;width:30rem;text-align:center">5秒后自动取消</p>
+          <div style="width: 28rem;height:8.5rem;display: flex;justify-content: space-evenly;align-items: center;">
+            <button onclick="jump()">确定</button>
+            <button class="disable">取消</button>
+          </div>
+        </div>
+          `;
+      }, 900);
+      check = 0;
+
+      dynamicIsland.classList.add('biger');
+      setTimeout(function () {
+        dynamicIsland.innerHTML = "";
+      }, 4000);
+      setTimeout(function () {
+        dynamicIsland.classList.remove('biger');
+        document.getElementById('btn1').disabled = false;
+        document.getElementById('btn1').classList.remove("disable");
+        document.getElementById('btn2').disabled = false;
+        document.getElementById('btn2').classList.remove("disable");
+      }, 5000);
+    }
+
+    function jump() {
+      window.location.href = "https://bili32414.github.io/#services";
+    }
   </script>
 </head>
 
 <body>
-  <div style="width: 100%; height: 50rem; display: flex; justify-content: center;">
-    <div
-      style="width: 100%; height:100%; display: flex; justify-content: center;
-      /* background-image: url(./Dynamic-Island.png); background-attachment: fixed; background-size: cover; background-position: center center; */
-      ">
-      <div id="Dynamic-Island" class="DI" onclick="big()">
-        <div style="width:100%;height:100%;display: flex;justify-content: center;align-items: center;"><p style="text-align:center;color:white;font-size:2rem;margin:0">南锣子酱</p></div>
+  <div style="width: 100%; height: 25rem; display: flex; justify-content: center;">
+    <div style="width: 100%; height:100%; display: flex; justify-content: center;">
+      <div id="Dynamic-Island" class="DI">
       </div>
     </div>
   </div>
   <div style="width: 100%;display: flex;justify-content: center;align-items: center;position: absolute;bottom: 0;">
     <button style="margin: 5px;" id="btn1" onclick="big()">小弹窗</button>
-    <!-- <button style="margin: 5px;" id="btn2" onclick="biger()">大弹窗</button> -->
+    <button style="margin: 5px;" id="btn2" onclick="biger()">大弹窗/关于</button>
+    <button style="margin: 5px;" id="btn3" onclick="back()">返回</button>
   </div>
 </body>
 
